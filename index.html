@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Funcionários</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <aside class="barra-lateral">
+        <nav>
+            <ul>
+                <li><a href="#" aria-label="Dashboard" class="ativo"><img src="https://api.iconify.design/ph:house-fill.svg?color=white" alt="Dashboard"></a></li>
+                <li><a href="#" aria-label="Usuários"><img src="https://api.iconify.design/ph:users-three-fill.svg?color=white" alt="Usuários"></a></li>
+                <li><a href="#" aria-label="Segurança"><img src="https://api.iconify.design/ph:lock-fill.svg?color=white" alt="Segurança"></a></li>
+                <li><a href="#" aria-label="Histórico"><img src="https://api.iconify.design/ph:clock-counter-clockwise-fill.svg?color=white" alt="Histórico"></a></li>
+                <li><a href="#" aria-label="Perfil"><img src="https://api.iconify.design/ph:user-fill.svg?color=white" alt="Perfil"></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container-principal">
+        <aside class="perfil-lateral">
+            <div class="cartao-perfil">
+                <img src="https://api.iconify.design/ph:user-circle-thin.svg?color=%23707070" alt="Avatar do Perfil" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ex lorem, rhoncus nec ante eu, venenatis aliquam turpis. Nulla facilisi. Curabitur nec mattis dolor.
+                </p>
+            </div>
+        </aside>
+
+        <main class="conteudo">
+            <section class="secao-funcionarios">
+                <header class="cabecalho-titulo">
+                    <h1>Funcionário(s)</h1>
+                </header>
+
+                <div class="container-acoes">
+                    <button class="botao-adicionar">+ Adicionar Funcionário</button>
+                    <div class="area-filtros">
+                        <div class="filtros">
+                            <button class="botao-filtro">Ver apenas ativos</button>
+                            <button class="botao-filtro">Limpar filtros</button>
+                        </div>
+                        <span class="contador-ativos">Ativos 2/4</span>
+                    </div>
+                </div>
+
+                <ul class="lista-funcionarios">
+                    <li class="cartao-funcionario status-ativo">
+                        <div class="info-funcionario">
+                            <h3>Daniel Alves da Silva</h3>
+                            <div class="container-identificadores">
+                                <span class="identificador neutro">000.000.000-99</span>
+                                <span class="identificador status ativo">Ativo</span>
+                                <span class="identificador cargo">Cargo 1</span>
+                            </div>
+                        </div>
+                        <button class="botao-opcoes" aria-label="Mais opções">⋯</button>
+                    </li>
+                    <li class="cartao-funcionario status-inativo">
+                        <div class="info-funcionario">
+                            <h3>Giselle Torres Lopes</h3>
+                            <div class="container-identificadores">
+                                <span class="identificador neutro">000.000.000-88</span>
+                                <span class="identificador status inativo">Inativo</span>
+                                <span class="identificador cargo">Cargo 2</span>
+                            </div>
+                        </div>
+                        <button class="botao-opcoes" aria-label="Mais opções">⋯</button>
+                    </li>
+                    <li class="cartao-funcionario status-inativo">
+                        <div class="info-funcionario">
+                            <h3>Ana Bispo dos Santos</h3>
+                            <div class="container-identificadores">
+                                <span class="identificador neutro">000.000.000-99</span>
+                                <span class="identificador status inativo">Inativo</span>
+                                <span class="identificador cargo">Cargo 1</span>
+                            </div>
+                        </div>
+                        <button class="botao-opcoes" aria-label="Mais opções">⋯</button>
+                    </li>
+                    <li class="cartao-funcionario status-ativo">
+                        <div class="info-funcionario">
+                            <h3>Regina Elisa Souza</h3>
+                            <div class="container-identificadores">
+                                <span class="identificador neutro">000.000.000-99</span>
+                                <span class="identificador status ativo">Ativo</span>
+                                <span class="identificador cargo">Cargo 3</span>
+                            </div>
+                        </div>
+                        <button class="botao-opcoes" aria-label="Mais opções">⋯</button>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
