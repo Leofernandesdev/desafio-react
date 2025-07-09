@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+:root {
+    --cor-primaria: #63A0BE;
+    --fundo-geral: #E5E5E5;
+    --fundo-card-inativo: #EEF1F5; /* Cor para cards inativos */
+    --fundo-card-ativo: #D5EAF4; /* Cor mais azulada para cards ativos */
+    --cor-texto: #707070;
+    --texto-botao: #626262;
+    --fundo-botao-filtro: #D5D6D5;
+
+    /* Cores para os identificadores (badges) */
+    --cor-fundo-badge: #649FBF;
+    --cor-texto-badge: #FFFFFF;
+
+    --fonte-principal: 'Poppins', sans-serif;
+
+    /* Padrões de Layout */
+    --raio-borda: 8px;
+    --sombra-principal: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--fundo-geral);
+    color: var(--cor-texto);
+}
+
+
+/* 2. LAYOUT MOBILE FIRST
+/* =================================================================== */
+.barra-lateral { display: none; }
+.container-principal { padding: 1rem; }
+.conteudo { padding: 0; }
+.secao-funcionarios {
+    background-color: #FFFFFF;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-principal);
+    overflow: hidden;
+}
+
+
+.cabecalho-titulo { background-color: var(--cor-primaria); padding: 1.25rem 1.5rem; }
+.cabecalho-titulo h1 { font-size: 1.5rem; color: #FFFFFF; font-weight: 500; }
+.container-acoes { padding: 1.5rem; border-bottom: 1px solid var(--fundo-geral); }
+.botao-adicionar { width: 100%; background-color: #FFFFFF; border: 1px solid #D5D6D5; color: var(--cor-primaria); font-weight: 500; font-size: 0.9rem; padding: 0.75rem; border-radius: var(--raio-borda); cursor: pointer; margin-bottom: 1.5rem; }
+.area-filtros { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.filtros { display: flex; gap: 0.5rem; }
+.botao-filtro { background-color: var(--fundo-botao-filtro); border: none; color: var(--texto-botao); padding: 0.6rem 1.2rem; border-radius: var(--raio-borda); cursor: pointer; font-weight: 500; }
+.contador-ativos { font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
+
+.lista-funcionarios {
+    list-style: none;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.cartao-funcionario {
+    border-radius: var(--raio-borda);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+
+.cartao-funcionario.status-inativo {
+    background-color: var(--fundo-card-inativo);
+}
+
+
+.cartao-funcionario.status-ativo {
+    background-color: var(--fundo-card-ativo);
+}
+
+.cartao-funcionario:hover {
+    transform: translateY(-2px);
+}
+
+.info-funcionario {
+    padding: 1.5rem;
+    flex-grow: 1; 
+}
+
+.info-funcionario h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.container-identificadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+
+.identificador {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    background-color: var(--cor-fundo-badge);
+    color: var(--cor-texto-badge);
+}
+
+
+.botao-opcoes {
+    align-self: stretch;
+    background-color: var(--cor-fundo-badge); 
+    border: none;
+    border-left: 1px solid rgba(0,0,0,0.08); 
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-texto-badge);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 4. LAYOUT DESKTOP (Telas > 992px) */
+@media (min-width: 992px) {
+    body { display: flex; }
+    .barra-lateral { display: block; position: sticky; top: 0; width: 80px; height: 100vh; background-color: var(--cor-primaria); }
+    .barra-lateral nav ul { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding-top: 1.5rem; }
+    .barra-lateral nav a:hover, .barra-lateral nav a.ativo { background-color: rgba(0, 0, 0, 0.1); border-radius: var(--raio-borda); }
+    .barra-lateral nav img { width: 28px; display: block; padding: 0.5rem; }
+    .container-principal { flex-grow: 1; display: flex; padding: 1.5rem; gap: 1.5rem; }
+    .perfil-lateral { display: block; flex: 0 0 300px; }
+    .cartao-perfil { background-color: white; border-radius: var(--raio-borda); padding: 1.5rem; box-shadow: var(--sombra-principal); text-align: center; }
+    .cartao-perfil img { width: 100px; height: 100px; margin-bottom: 1rem; }
+    .conteudo { flex-grow: 1; padding: 0; max-width: 900px; }
+}
