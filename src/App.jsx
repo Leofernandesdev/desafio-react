@@ -36,8 +36,7 @@ function App() {
       setEmployees((prev) => [...prev, newEmployee]);
     }
     setShowAddModal(false);
-    // Avança o passo apenas se estiver salvando um NOVO funcionário,
-    // para não pular um passo ao simplesmente editar.
+   
     if (!editingEmployee) {
       setIsStepCompleted(true);
       setCurrentStep(2);
@@ -57,6 +56,7 @@ function App() {
   const handleNextStep = () => { 
     if (currentStep < stepperSteps.length) { 
       if(currentStep === 1) {
+       
         setIsStepCompleted(true);
       }
       setCurrentStep(currentStep + 1); 
@@ -69,12 +69,12 @@ function App() {
     } 
   };
 
-
   const renderContent = () => {
     if (activeMenuItem !== 'users') {
       return <PlaceholderPage />;
     }
 
+   
     if (currentStep > 1) {
       return <PlaceholderPage />;
     }
@@ -91,7 +91,7 @@ function App() {
       );
     }
     
-    
+
     return (
       <EmployeeList
         employees={employees}
@@ -103,8 +103,8 @@ function App() {
       />
     );
   };
-
-  const isNextButtonDisabled = currentStep === 1 && !isStepCompleted;
+  
+  const isNextButtonDisabled = currentStep === 1 && !isStepCompleted && !showAddModal;
 
   return (
     <div className="min-h-screen font-sans flex bg-[#F5F5F5]">
@@ -127,13 +127,13 @@ function App() {
             ) : ( <div></div> )}
             
             {currentStep < stepperSteps.length && (
-               <button 
-                 onClick={handleNextStep}
-                 disabled={isNextButtonDisabled}
-                 className={`w-[194px] h-[32px] flex items-center justify-center font-roboto font-bold text-sm rounded-xl transition-colors ${ isNextButtonDisabled ? 'bg-[#E0E0E0] text-[#757575] cursor-not-allowed' : 'bg-[#1976D2] hover:bg-blue-800 text-white' }`}
-               >
-                 Próximo passo
-               </button>
+                <button 
+                  onClick={handleNextStep}
+                  disabled={isNextButtonDisabled}
+                  className={`w-[194px] h-[32px] flex items-center justify-center font-roboto font-bold text-sm rounded-xl transition-colors ${ isNextButtonDisabled ? 'bg-[#E0E0E0] text-[#757575] cursor-not-allowed' : 'bg-[#1976D2] hover:bg-blue-800 text-white' }`}
+                >
+                  Próximo passo
+                </button>
             )}
           </div>
         )}
