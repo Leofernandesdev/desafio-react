@@ -44,7 +44,7 @@ const EmployeeList = ({ employees, onAddEmployeeClick, onEditEmployee, onDeleteE
             Adicionar Funcionário
           </button>
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-4">
-             {/* ... botões de filtro ... */}
+             
           </div>
           <ul ref={listContainerRef} className="space-y-4 pt-4">
             {filteredEmployees.map((employee) => (
@@ -59,7 +59,7 @@ const EmployeeList = ({ employees, onAddEmployeeClick, onEditEmployee, onDeleteE
             ))}
           </ul>
         </div>
-        <div className="p-6 bg-white border-t border-[#E0E0E0] flex items-center justify-end rounded-b-2xl">
+        <div className="p-6  flex items-center justify-end rounded-b-2xl">
           <div className="flex items-center gap-4">
             <span className="font-sans text-[#757575] font-medium">A etapa está concluída?</span>
             <label className="relative inline-flex items-center cursor-pointer">
